@@ -1,0 +1,130 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "sentinel12_19_meta",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "sentinel12_19_meta.json",
+            "type": "application/geo+json"
+        }
+    ],
+    "assets": {
+        "s1_msk": {
+            "href": "19/sentinel12_s1_19_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_img": {
+            "href": "19/sentinel12_s2_19_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_msk": {
+            "href": "19/sentinel12_s2_19_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s1_valid": {
+            "href": "19/sentinel12_s1_19_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_valid": {
+            "href": "19/sentinel12_s2_19_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s1_img": {
+            "href": "19/sentinel12_s1_19_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_slope": {
+            "href": "19/sentinel12_copdem30_19_slope.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_elevation": {
+            "href": "19/sentinel12_copdem30_19_elevation.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        }
+    },
+    "stac_extensions": [],
+    "properties": {
+        "flood": false,
+        "split": "train",
+        "datetime": "2020-01-01T00:00:00.000000Z",
+        "landcover": "Tree cover, needleleaved, evergreen, closed to open (>15%)",
+        "s1_srcids": [
+            "S1A_IW_GRDH_1SDV_20190629T163606_20190629T163631_027897_032646_1E25"
+        ],
+        "s2_srcids": [
+            "S2A_MSIL1C_20190630T100031_N0207_R122_T33UXV_20190630T120400"
+        ],
+        "copdem30_slope": "sentinel12_copdem30_19_slope",
+        "copdem30_elevation": "sentinel12_copdem30_19_elevation",
+        "date_s1": "20190629",
+        "date_s2": "20190630"
+    },
+    "bbox": [
+        1836257.2554546013,
+        7011123.6299758265,
+        2027045.5603696003,
+        7190125.048312945
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    1836257.2554546013,
+                    7011123.6299758265
+                ],
+                [
+                    1836257.2554546013,
+                    7190125.048312945
+                ],
+                [
+                    2027045.5603696003,
+                    7190125.048312945
+                ],
+                [
+                    2027045.5603696003,
+                    7011123.6299758265
+                ],
+                [
+                    1836257.2554546013,
+                    7011123.6299758265
+                ]
+            ]
+        ]
+    }
+}

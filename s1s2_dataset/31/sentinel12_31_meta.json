@@ -1,0 +1,107 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "sentinel12_31_meta",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "sentinel12_31_meta.json",
+            "type": "application/geo+json"
+        }
+    ],
+    "assets": {
+        "s2_img": {
+            "href": "31/sentinel12_s2_31_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_msk": {
+            "href": "31/sentinel12_s2_31_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_valid": {
+            "href": "31/sentinel12_s2_31_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_slope": {
+            "href": "31/sentinel12_copdem30_31_slope.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_elevation": {
+            "href": "31/sentinel12_copdem30_31_elevation.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        }
+    },
+    "stac_extensions": [],
+    "properties": {
+        "flood": false,
+        "split": "test",
+        "datetime": "2020-01-01T00:00:00.000000Z",
+        "landcover": "Sparse vegetation (tree, shrub, herbaceous cover) (<15%)",
+        "s1_srcids": [],
+        "s2_srcids": [
+            "S2A_MSIL1C_20190909T174911_N0208_R141_T15VUG_20190909T212901"
+        ],
+        "copdem30_slope": "sentinel12_copdem30_31_slope",
+        "copdem30_elevation": "sentinel12_copdem30_31_elevation",
+        "date_s1": "20190909",
+        "date_s2": "20190909"
+    },
+    "bbox": [
+        -10744942.690350538,
+        8267998.0987920975,
+        -10535095.77180776,
+        8495285.823799523
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -10744942.690350538,
+                    8267998.0987920975
+                ],
+                [
+                    -10744942.690350538,
+                    8495285.823799523
+                ],
+                [
+                    -10535095.77180776,
+                    8495285.823799523
+                ],
+                [
+                    -10535095.77180776,
+                    8267998.0987920975
+                ],
+                [
+                    -10744942.690350538,
+                    8267998.0987920975
+                ]
+            ]
+        ]
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "sentinel12_17_meta",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "sentinel12_17_meta.json",
+            "type": "application/geo+json"
+        }
+    ],
+    "assets": {
+        "s1_msk": {
+            "href": "17/sentinel12_s1_17_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_img": {
+            "href": "17/sentinel12_s2_17_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_msk": {
+            "href": "17/sentinel12_s2_17_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s1_valid": {
+            "href": "17/sentinel12_s1_17_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_valid": {
+            "href": "17/sentinel12_s2_17_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s1_img": {
+            "href": "17/sentinel12_s1_17_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_slope": {
+            "href": "17/sentinel12_copdem30_17_slope.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_elevation": {
+            "href": "17/sentinel12_copdem30_17_elevation.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        }
+    },
+    "stac_extensions": [],
+    "properties": {
+        "flood": false,
+        "split": "val",
+        "datetime": "2020-01-01T00:00:00.000000Z",
+        "landcover": "Tree cover, needleleaved, evergreen, closed to open (>15%)",
+        "s1_srcids": [
+            "S1B_IW_GRDH_1SDV_20190619T220526_20190619T220555_016771_01F908_6C86",
+            "S1B_IW_GRDH_1SDV_20190619T220555_20190619T220620_016771_01F908_16E7",
+            "S1B_IW_GRDH_1SDV_20190629T222154_20190629T222223_016917_01FD64_6A96",
+            "S1B_IW_GRDH_1SDV_20190629T222223_20190629T222248_016917_01FD64_94D4"
+        ],
+        "s2_srcids": [
+            "S2A_MSIL1C_20190625T154911_N0207_R054_T19VEE_20190625T192843"
+        ],
+        "copdem30_slope": "sentinel12_copdem30_17_slope",
+        "copdem30_elevation": "sentinel12_copdem30_17_elevation",
+        "date_s1": "20190619",
+        "date_s2": "20190625"
+    },
+    "bbox": [
+        -7681082.17173414,
+        7895075.7838457795,
+        -7470590.675316133,
+        8100150.319317066
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -7681082.17173414,
+                    7895075.7838457795
+                ],
+                [
+                    -7681082.17173414,
+                    8100150.319317066
+                ],
+                [
+                    -7470590.675316133,
+                    8100150.319317066
+                ],
+                [
+                    -7470590.675316133,
+                    7895075.7838457795
+                ],
+                [
+                    -7681082.17173414,
+                    7895075.7838457795
+                ]
+            ]
+        ]
+    }
+}
