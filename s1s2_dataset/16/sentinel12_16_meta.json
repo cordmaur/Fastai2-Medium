@@ -1,0 +1,133 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "sentinel12_16_meta",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "sentinel12_16_meta.json",
+            "type": "application/geo+json"
+        }
+    ],
+    "assets": {
+        "s1_msk": {
+            "href": "16/sentinel12_s1_16_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_img": {
+            "href": "16/sentinel12_s2_16_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_msk": {
+            "href": "16/sentinel12_s2_16_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s1_valid": {
+            "href": "16/sentinel12_s1_16_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_valid": {
+            "href": "16/sentinel12_s2_16_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s1_img": {
+            "href": "16/sentinel12_s1_16_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_slope": {
+            "href": "16/sentinel12_copdem30_16_slope.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_elevation": {
+            "href": "16/sentinel12_copdem30_16_elevation.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        }
+    },
+    "stac_extensions": [],
+    "properties": {
+        "flood": false,
+        "split": "train",
+        "datetime": "2020-01-01T00:00:00.000000Z",
+        "landcover": "Tree cover, needleleaved, evergreen, closed to open (>15%)",
+        "s1_srcids": [
+            "S1B_IW_GRDH_1SDV_20190609T002544_20190609T002609_016612_01F447_D8C8",
+            "S1B_IW_GRDH_1SDV_20190609T002609_20190609T002634_016612_01F447_41FC",
+            "S1B_IW_GRDH_1SDV_20190611T000920_20190611T000945_016641_01F520_727F",
+            "S1B_IW_GRDH_1SDV_20190611T000945_20190611T001010_016641_01F520_5369"
+        ],
+        "s2_srcids": [
+            "S2A_MSIL1C_20190614T175921_N0207_R041_T14VML_20190614T213826"
+        ],
+        "copdem30_slope": "sentinel12_copdem30_16_slope",
+        "copdem30_elevation": "sentinel12_copdem30_16_elevation",
+        "date_s1": "20190609",
+        "date_s2": "20190614"
+    },
+    "bbox": [
+        -11211939.08586425,
+        8081788.106889166,
+        -11001417.939096242,
+        8297640.9238982
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -11211939.08586425,
+                    8081788.106889166
+                ],
+                [
+                    -11211939.08586425,
+                    8297640.9238982
+                ],
+                [
+                    -11001417.939096242,
+                    8297640.9238982
+                ],
+                [
+                    -11001417.939096242,
+                    8081788.106889166
+                ],
+                [
+                    -11211939.08586425,
+                    8081788.106889166
+                ]
+            ]
+        ]
+    }
+}
