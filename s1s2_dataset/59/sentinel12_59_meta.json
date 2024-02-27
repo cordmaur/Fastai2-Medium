@@ -1,0 +1,107 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "sentinel12_59_meta",
+    "links": [
+        {
+            "rel": "root",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "sentinel12_59_meta.json",
+            "type": "application/geo+json"
+        }
+    ],
+    "assets": {
+        "s2_img": {
+            "href": "59/sentinel12_s2_59_img.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_msk": {
+            "href": "59/sentinel12_s2_59_msk.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "s2_valid": {
+            "href": "59/sentinel12_s2_59_valid.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_slope": {
+            "href": "59/sentinel12_copdem30_59_slope.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        },
+        "copdem30_elevation": {
+            "href": "59/sentinel12_copdem30_59_elevation.tif",
+            "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+            "roles": [
+                "data"
+            ]
+        }
+    },
+    "stac_extensions": [],
+    "properties": {
+        "flood": false,
+        "split": "train",
+        "datetime": "2020-01-01T00:00:00.000000Z",
+        "landcover": "Water bodies",
+        "s1_srcids": [],
+        "s2_srcids": [
+            "S2B_MSIL1C_20190718T151659_N0208_R025_T20TNS_20190718T201807"
+        ],
+        "copdem30_slope": "sentinel12_copdem30_59_slope",
+        "copdem30_elevation": "sentinel12_copdem30_59_elevation",
+        "date_s1": "20190717",
+        "date_s2": "20190718"
+    },
+    "bbox": [
+        -7013156.6548711825,
+        5774830.485078601,
+        -6852548.65304857,
+        5933039.561933306
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -7013156.6548711825,
+                    5774830.485078601
+                ],
+                [
+                    -7013156.6548711825,
+                    5933039.561933306
+                ],
+                [
+                    -6852548.65304857,
+                    5933039.561933306
+                ],
+                [
+                    -6852548.65304857,
+                    5774830.485078601
+                ],
+                [
+                    -7013156.6548711825,
+                    5774830.485078601
+                ]
+            ]
+        ]
+    }
+}
