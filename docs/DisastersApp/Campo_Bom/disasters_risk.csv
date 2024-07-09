@@ -1,0 +1,3 @@
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
+2013-09-05,0,0,3393,4615750.43,Inundações,2013/2014,539.7,2013-08-28,87.0,36.45,10.37,87380000,93.08641975308642,126632.38491083674,69981
+2011-07-22,0,0,1700,0.0,Inundações,2011/2012,481.6,2011-07-23,17.4,12.12,6.51,87380000,140.26402640264027,,69981
