@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="rs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gaugeJS/dist/gauge.min.js"></script>
+
+    <link rel="stylesheet" href="map.css" />
+</head>
+
+<body>
+    <div id="title-bar">
+        <h1>Mapa de Vulnerabilidade - 2023</h1>
+    </div>
+    <div>
+        <label for="map-type">Selecione o tipo de vulnerabilidade:</label>
+        <select style="text-align: left;" id="map-type" onchange="changeMapType(event)">
+            <option value="0">Danos Humanos</option>
+            <option value="1">Danos Materiais</option>
+            <option value="2">Combinado</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+    <div id="container">
+        <div id="map"></div>
+    </div>
+
+    <hr>
+    <div class="section-header" onclick="toggleSelection('content')">
+        Relatório de Vulnerabilidade (Selecione um município) <span class="arrow down"></span>
+    </div>
+
+    <div id="content"></div>
+</body>
+
+<!-- Event listeners -->
+<script>
+    function changeMapType(e) {
+        // Loop through the layers to remove GeoJson
+        map.eachLayer((layer) => {
+            if (layer instanceof L.GeoJSON) {
+                map.removeLayer(layer);
+            }
+        })
+
+        activeLayer = layers[e.target.value]
+        activeLayer.addTo(map)
+    }
+</script>
+
+<!-- Constants -->
+<script>
+    const opts = {
+        angle: 0.1, // The span of the gauge arc
+        lineWidth: 0.25, // The line thickness
+        radiusScale: 0.7, // Relative radius
+        pointer: {
+            length: 0.6, // Relative to gauge radius
+            strokeWidth: 0.03, // The thickness
+            color: '#000000' // Fill color
+        },
+        staticZones: [
+            { strokeStyle: "green", min: 0, max: 0.25 }, // Red
+            { strokeStyle: "yellow", min: 0.25, max: 0.5 }, // Yellow
+            { strokeStyle: "red", min: 0.5, max: 1. } // Green
+        ],
+        limitMax: false,     // If false, max value increases automatically if value > maxValue
+        limitMin: false,     // If true, the min value of the gauge will be fixed
+        highDpiSupport: true,     // High resolution support
+        staticLabels: {
+            // font: "12px",
+            labels: [0, 0.25, 0.5, 1],
+            fractionDigits: 2
+        }
+    };
+
+
+    const catColors = {
+        Alto: "#ff0000",
+        Medio: "#ffff00",
+        Baixo: "#00ff00",
+        nan: "#ffffff"
+    }
+</script>
+
+<!-- Basic functions -->
+<script>
+    function toggleSelection(sectionId) {
+        section = document.getElementById(sectionId)
+
+        let arrow = section.previousElementSibling.querySelector('.arrow')
+
+        let hidden = section.classList.toggle('section-hidden')
+
+        // Adjust the arrow accordingly
+        if (hidden) {
+            arrow.classList.remove('down')
+        } else {
+            arrow.classList.add('down')
+        }
+    }
+
+    function removeAccentsAndSpecialCharacters(str) {
+        // Normalize the string to NFD form
+        return str.normalize('NFD')
+            // Remove diacritical marks (accents)
+            .replace(/[\u0300-\u036f]/g, '')
+            // Remove special characters (optional)
+            .replace(/[^a-zA-Z0-9\s]/g, '');
+    }
+
+    function styleFeatures(feature, type) {
+        // let cat = feature.properties['Categoria_DH']
+        let cat = feature.properties[type]
+        let color = catColors[cat]
+
+        return {
+            fillColor: catColors[cat],
+            opacity: 0.8,
+            fillOpacity: 0.6,
+            weight: 0.5,
+            // color: 'black'
+        }
+    }
+
+    function highlightFeature(event) {
+        let layer = event.target
+
+        layer.setStyle({
+            weight: 5,
+            color: "#666",
+            fillOpacity: 0.8
+        })
+
+        layer.bringToFront()
+
+        info.update(layer.feature.properties)
+    }
+
+    function loadReport(cityName) {
+        let rawUrl = 'https://raw.githubusercontent.com/cordmaur/Fastai2-Medium/master/docs/RS-2'
+
+        cityName = removeAccentsAndSpecialCharacters(cityName).replace(/ /g, '_')
+        console.log(cityName)
+
+        // fetch the station information from a url
+        let reportUrl = rawUrl + `/Report_${cityName}.html`
+
+        console.log(reportUrl)
+
+        fetch(reportUrl)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content').innerHTML = data
+            })
+            .catch(error => console.error('Error fetching report:', error))
+    }
+
+    function clickFeature(event) {
+        map.fitBounds(event.target.getBounds())
+
+        let cityName = event.target.feature.properties['index']
+
+        loadReport(cityName)
+
+    }
+
+    function configFeature(feature, layer) {
+        // this function is called for each feature in the GeoJSON
+        // It will be used to set events listeners, popups, etc.
+
+        let cityName = feature.properties['index']
+        let id = feature.properties['CD_MUN']
+
+        let popup = `
+        <div class="popupdiv">
+            <h4>${cityName}</h4>
+            <table class="gaugetable">
+                <tr>
+                    <td><label class="gaugelabel" for="gaugeDH${id}">Danos Humanos</label></td>
+                    <td><canvas id="gaugeDH${id}"></canvas></td>
+                </tr>
+                <tr>
+                    <td><label class="gaugelabel" for="gaugeDM${id}">Danos Materiais</label></td>
+                    <td><canvas id="gaugeDM${id}"></canvas></td>
+                </tr>
+                <tr>
+                    <td><label class="gaugelabel" for="gaugeRisk${id}">Risco Total</label></td>
+                    <td><canvas id="gaugeRisk${id}"></canvas></td>
+                </tr>
+            </table>
+        </div>`
+
+        layer.bindPopup(popup)
+
+        let gaugeTypes = ['gaugeDH', 'gaugeDM', 'gaugeRisk']
+        let indices = ['normDH', 'normDM', 'Risk']
+
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: (e) => { activeLayer.resetStyle(e.target); info.update() },
+            click: clickFeature,
+            popupopen: function (e) {
+
+                for (let i = 0; i < gaugeTypes.length; i++) {
+                    console.log(gaugeTypes[i] + id)
+                    let target = document.getElementById(gaugeTypes[i] + id)
+                    let gauge = new Gauge(target).setOptions(opts)
+
+                    gauge.setMinValue(0)
+                    gauge.maxValue = 1.
+                    gauge.set(feature.properties[indices[i]])
+                }
+
+            }
+        })
+
+    }
+
+    function createGeoJSON(type) {
+
+        let typedStyleFeatures = (p) => styleFeatures(p, type)
+
+        let geojson = L.geoJSON(jsonData, {
+            onEachFeature: configFeature,
+            style: typedStyleFeatures
+        })
+
+        return geojson
+    }
+</script>
+
+<!-- Info and Legend Controls -->
+<script>
+    // Create info control
+    const info = L.control()
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info')
+        this.update()
+        return this._div
+    }
+
+    info.update = function (props) {
+        if (props) {
+            txt = '<h3>' + props['index'] + '</h3>'
+            txt += '<b>Categorias de Risco</b><br>'
+
+            types = ['Categoria_DH', 'Categoria_DM', 'Categoria']
+
+            types.forEach((el) => {
+                let cat = props[el] == 'nan' ? 'Não classificado' : props[el]
+                txt += el + ':' + cat + '<br>'
+            })
+
+            this._div.innerHTML = txt
+        } else {
+            this._div.innerHTML = '<h4>Passe o mouse sobre um município</h4>'
+        }
+
+    }
+
+    // Create Legend Control
+    var legend = L.control({ position: 'bottomright' })
+
+    legend.onAdd = function (map) {
+        let div = L.DomUtil.create('div', 'info legend')
+        let cats = ['Alto', 'Medio', 'Baixo', 'nan']
+
+        div.innerHTML = '<h4>Legenda</h4>'
+        for (let i = 0; i < cats.length; i++) {
+            div.innerHTML += '<i style="background:' + catColors[cats[i]] + '"></i> '
+            div.innerHTML += (cats[i] == 'nan' ? 'Não classificado' : cats[i]) + '<br>'
+        }
+
+        return div
+    }
+</script>
+
+<!-- Main Script -->
+<script>
+    // Create the Map, associated to the corresponding div
+    const map = L.map('map').setView([0, 0], 10)
+
+    // Add the tiles layer
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Add the geojson layers
+    const layers = [
+        createGeoJSON('Categoria_DH'),
+        createGeoJSON('Categoria_DM'),
+        createGeoJSON('Categoria'),
+    ]
+
+    var activeLayer = layers[0]
+    activeLayer.addTo(map)
+
+    // Adjust bounds to the geojson
+    bounds = activeLayer.getBounds()
+    map.fitBounds(bounds)
+    map.setMaxBounds(bounds)
+    map.setMinZoom(map.getZoom())
+
+    // Add legend and info controls to the map
+    legend.addTo(map)
+    info.addTo(map)
+
+
+</script>
+
+</html>
