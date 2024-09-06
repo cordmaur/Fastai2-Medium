@@ -9,7 +9,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <script src="rs.js"></script>
+    <!-- <script src="rs.js"></script> -->
+    <script src="rs_inundacoes.js"></script>
+    <script src="rs_enxurradas.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gaugeJS/dist/gauge.min.js"></script>
 
     <link rel="stylesheet" href="map.css" />
@@ -18,6 +21,14 @@
 <body>
     <div id="title-bar">
         <h1>Mapa de Vulnerabilidade - 2023</h1>
+    </div>
+    <div>
+        <label for="map-data">Selecione o tipo de desastre:</label>
+        <select style="text-align: left;" id="map-data" onchange="changeMapType(event)">
+            <option value="Inundacoes">Inundações</option>
+            <option value="Enxurradas">Enxurradas (TR>=5)</option>
+            <!-- Add more options as needed -->
+        </select>
     </div>
     <div>
         <label for="map-type">Selecione o tipo de vulnerabilidade:</label>
@@ -43,6 +54,9 @@
 <!-- Event listeners -->
 <script>
     function changeMapType(e) {
+        const dataLayer = document.getElementById('map-data').value
+        const typeLayer = document.getElementById('map-type').value
+
         // Loop through the layers to remove GeoJson
         map.eachLayer((layer) => {
             if (layer instanceof L.GeoJSON) {
@@ -50,7 +64,7 @@
             }
         })
 
-        activeLayer = layers[e.target.value]
+        activeLayer = layers[dataLayer][typeLayer]
         activeLayer.addTo(map)
     }
 </script>
@@ -81,12 +95,18 @@
         }
     };
 
-
     const catColors = {
         Alto: "#ff0000",
         Médio: "#ffff00",
         Baixo: "#00ff00",
-        nan: "#ffffff"
+        "Inundação sem estação": "#00FFFF",
+        "Inundação sem dano registrado": "#000080",
+        "Enxurrada sem estação": "#00FFFF",
+        "Enxurrada sem dano registrado": "#000080",
+        "Sem estação": "#00FFFF",
+        "Sem dano registrado": "#000080",
+        nan: "#ffffff",
+        null: "#ffffff"
     }
 </script>
 
@@ -122,7 +142,7 @@
         let color = catColors[cat]
 
         return {
-            fillColor: catColors[cat],
+            fillColor: color,
             opacity: 0.8,
             fillOpacity: 0.6,
             weight: 0.5,
@@ -224,7 +244,7 @@
 
     }
 
-    function createGeoJSON(type) {
+    function createGeoJSON(jsonData, type) {
 
         let typedStyleFeatures = (p) => styleFeatures(p, type)
 
@@ -271,7 +291,7 @@
 
     legend.onAdd = function (map) {
         let div = L.DomUtil.create('div', 'info legend')
-        let cats = ['Alto', 'Médio', 'Baixo', 'nan']
+        let cats = ['Alto', 'Médio', 'Baixo', 'Sem estação', 'Sem dano registrado', 'nan']
 
         div.innerHTML = '<h4>Legenda</h4>'
         for (let i = 0; i < cats.length; i++) {
@@ -295,13 +315,22 @@
     }).addTo(map);
 
     // Add the geojson layers
-    const layers = [
-        createGeoJSON('Categoria_DH'),
-        createGeoJSON('Categoria_DM'),
-        createGeoJSON('Categoria'),
-    ]
+    const layers = {
+        Inundacoes: [
+            createGeoJSON(jsonInundacoes, 'Categoria_DH'),
+            createGeoJSON(jsonInundacoes, 'Categoria_DM'),
+            createGeoJSON(jsonInundacoes, 'Categoria'),
+        ],
+        Enxurradas: [
+            createGeoJSON(jsonEnxurradas, 'Categoria_DH'),
+            createGeoJSON(jsonEnxurradas, 'Categoria_DM'),
+            createGeoJSON(jsonEnxurradas, 'Categoria'),
 
-    var activeLayer = layers[0]
+        ]
+
+    }
+
+    var activeLayer = layers['Inundacoes'][0]
     activeLayer.addTo(map)
 
     // Adjust bounds to the geojson
