@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <script src="portfolio.js"></script>
+
+    <!-- Include the Tabulator library -->
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+
+<body>
+    <div id="portfolio-table"></div>
+
+    <script>
+        // Transform the data to include a "stock" field
+        // const transformedData = Object.keys(portfolioData).map((stock) => ({
+        //     stock,
+        //     ...portfolioData[stock],
+        // }));
+
+        // Create the stars column
+        const manipulatedData = portfolioData.map((item) => {
+            return {
+                ...item,
+                stars: 6 - item.recomendation,
+            };
+        });
+
+        const scale = d3.scaleSequential()
+            .domain([1, 5])
+            .interpolator(d3.interpolateRgb("#FF5555", "#AAFFAA"));
+
+        function getColor(recommendation) {
+            return scale(recommendation);
+        }
+
+        // Create a new Tabulator instance
+        const table = new Tabulator("#portfolio-table", {
+            data: manipulatedData, // Pass in the portfolio data
+            // autoColumns: true,
+            columns: [
+                { title: "Stock", field: "Stock" }, // Note: we'll need to transform the data to include a "stock" field
+                { title: "Avg Price", field: "AvgPrice" },
+                // { title: "Qty", field: "Qty" },
+                // { title: "Volume", field: "Volume" },
+                { title: "Price", field: "Price" },
+                { title: "Low", field: "low" },
+                { title: "Mean", field: "mean" },
+                { title: "High", field: "high" },
+                { title: "Upside", field: 'Upside', sorter: 'number' },
+                { title: "Buy(1)/Sell(5)", field: "recomendation" },
+                {
+                    title: "Buy(1)/Sell(5)", field: "stars", formatter: 'progress',
+                    formatterParams: { min: 1, max: 5, color: getColor }
+                },
+                { title: "Recommendation", field: "stars", formatter: "star" },
+                { title: "Analysts", field: "analists" },
+                // { title: "Date", field: "Date" },
+            ],
+            // rowFormatter: function (row) {
+            //     const recommendation = row.getData().recomendation;
+            //     const color = getColor(recommendation);
+            //     row.getElement().style.backgroundColor = color;
+            // },
+        });
+
+
+    </script>
+
+</body>
+
+</html>
