@@ -1,4 +1,4 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2023-11-17,0,0,1693,1529000.0,Enxurradas,2023/2024,,,,,,86895000,,,1693
-2011-04-14,0,0,0,365000.0,Enxurradas,2011/2012,8847.8,2011-07-21,25.0,11.58,6.66,86895000,,31519.86183074266,1693
-2010-01-04,0,0,0,1595000.0,Inundações,2010/2011,7682.2,2010-01-05,3.57,4.57,4.01,86895000,,349015.31728665205,1693
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2023-11-17,0,0,1693,1529000.0,Enxurradas,2023/2024,,,,,,86895000,,,1693,Sim
+2011-04-14,0,0,0,365000.0,Enxurradas,2011/2012,8847.8,2011-07-21,25.0,11.58,6.66,86895000,,31519.86183074266,1693,Sim
+2010-01-04,0,0,0,1595000.0,Inundações,2010/2011,7682.2,2010-01-05,3.57,4.57,4.01,86895000,,349015.31728665205,1693,Sim

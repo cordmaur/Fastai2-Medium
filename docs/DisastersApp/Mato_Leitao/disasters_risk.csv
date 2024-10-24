@@ -1,5 +1,5 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2017-06-08,0,0,789,131048.0,Chuvas Intensas,2017/2018,,,,,,86895000,,,4627
-2015-10-13,0,0,20,109272.0,Alagamentos,2015/2016,,,,,,86895000,,,4627
-2014-07-21,0,0,3869,548000.0,Enxurradas,2014/2015,6450.5,2014-10-20,2.0,2.28,2.46,86895000,1696.9298245614036,240350.87719298247,4627
-2011-04-14,0,0,0,0.0,Enxurradas,2011/2012,8847.8,2011-07-21,25.0,11.58,6.66,86895000,,,4627
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2017-06-08,0,0,789,131048.0,Chuvas Intensas,2017/2018,,,,,,86895000,,,4627,Sim
+2015-10-13,0,0,20,109272.0,Alagamentos,2015/2016,,,,,,86895000,,,4627,Sim
+2014-07-21,0,0,3869,548000.0,Enxurradas,2014/2015,6450.5,2014-10-20,2.0,2.28,2.46,86895000,1696.9298245614036,240350.87719298247,4627,Sim
+2011-04-14,0,0,0,0.0,Enxurradas,2011/2012,8847.8,2011-07-21,25.0,11.58,6.66,86895000,,,4627,Sim

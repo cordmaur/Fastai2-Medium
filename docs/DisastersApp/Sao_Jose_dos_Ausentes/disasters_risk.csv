@@ -1,6 +1,6 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,1143.6,2010-05-12,21.5,14.02,9.89,15.31,84949800,,,3559
-2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,,,,,,,84949000,,,3559
-2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,736.9,2010-05-13,2.77,2.73,2.6,2.73,86100000,,,3559
-2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,21617.7,2010-04-27,6.6,5.85,6.29,5.82,74100000,,,3559
-2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,1363.7,2010-05-12,2.95,3.17,3.15,3.07,70200000,,,3559
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,1143.6,2010-05-12,21.5,14.02,9.89,15.31,84949800,,,3559,Sim
+2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,,,,,,,84949000,,,3559,
+2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,736.9,2010-05-13,2.77,2.73,2.6,2.73,86100000,,,3559,
+2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,21617.7,2010-04-27,6.6,5.85,6.29,5.82,74100000,,,3559,
+2010-03-26,0,0,0,0.0,Enxurradas,2010/2011,1363.7,2010-05-12,2.95,3.17,3.15,3.07,70200000,,,3559,

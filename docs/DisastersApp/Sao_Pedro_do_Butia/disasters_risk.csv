@@ -1,2 +1,2 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2014-10-23,0,0,0,0.0,Chuvas Intensas,2014/2015,517.2,2014-10-01,19.0,15.97,5.22,34.86,74900000,,,2950
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2014-10-23,0,0,0,0.0,Chuvas Intensas,2014/2015,517.2,2014-10-01,19.0,15.97,5.22,34.86,74900000,,,2950,Sim

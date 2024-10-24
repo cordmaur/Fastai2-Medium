@@ -1,5 +1,5 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2017-06-07,0,0,0,0.0,Enxurradas,2017/2018,2988.9,2017-05-28,12.43,6.12,4.73,5.5,85400000,,,2596
-2010-02-16,0,0,0,0.0,Enxurradas,2010/2011,3126.7,2010-01-05,21.75,8.24,5.56,7.0,85400000,,,2596
-2003-12-17,0,0,0,0.0,Enxurradas,2003/2004,3011.0,2003-12-16,14.5,6.4,4.85,5.71,85400000,,,2596
-2002-10-30,0,0,0,916010.0,Enxurradas,2002/2003,2526.1,2002-10-09,2.23,2.75,2.83,2.81,85400000,,333094.54545454547,2596
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2017-06-07,0,0,0,0.0,Enxurradas,2017/2018,2988.9,2017-05-28,12.43,6.12,4.73,5.5,85400000,,,2596,Sim
+2010-02-16,0,0,0,0.0,Enxurradas,2010/2011,3126.7,2010-01-05,21.75,8.24,5.56,7.0,85400000,,,2596,Sim
+2003-12-17,0,0,0,0.0,Enxurradas,2003/2004,3011.0,2003-12-16,14.5,6.4,4.85,5.71,85400000,,,2596,Sim
+2002-10-30,0,0,0,916010.0,Enxurradas,2002/2003,2526.1,2002-10-09,2.23,2.75,2.83,2.81,85400000,,333094.54545454547,2596,Sim

@@ -1,2 +1,2 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2023-11-17,0,0,2921,1310000.0,Chuvas Intensas,2023/2024,,,,,,86895000,,,2770
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2023-11-17,0,0,2921,1310000.0,Chuvas Intensas,2023/2024,,,,,,86895000,,,2770,Sim

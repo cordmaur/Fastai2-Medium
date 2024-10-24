@@ -1,9 +1,9 @@
-Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
-2023-06-21,0,0,2500,800000.0,Chuvas Intensas+Enxurradas,2023/2024,,,,,,87317060,,,11323
-2017-06-06,0,0,2376,896754.0,Enxurradas,2017/2018,,,,,,87317060,,,11323
-2011-07-21,0,0,609,0.0,Enxurradas,2011/2012,,,,,,87317060,,,11323
-2011-01-18,0,0,0,460000.0,Enxurradas,2011/2012,,,,,,87317060,,,11323
-2007-03-04,0,0,4520,0.0,Enxurradas,2007/2008,,,,,,87317060,,,11323
-1996-02-12,0,0,0,0.0,Enxurradas,1996/1997,,,,,,87317060,,,11323
-1995-12-28,0,0,0,0.0,Enxurradas,1995/1996,,,,,,87317060,,,11323
-1994-03-20,0,0,0,0.0,Enxurradas,1994/1995,,,,,,87317060,,,11323
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População,Selected
+2023-06-21,0,0,2500,800000.0,Chuvas Intensas+Enxurradas,2023/2024,,,,,,87317060,,,11323,Sim
+2017-06-06,0,0,2376,896754.0,Enxurradas,2017/2018,,,,,,87317060,,,11323,Sim
+2011-07-21,0,0,609,0.0,Enxurradas,2011/2012,,,,,,87317060,,,11323,Sim
+2011-01-18,0,0,0,460000.0,Enxurradas,2011/2012,,,,,,87317060,,,11323,Sim
+2007-03-04,0,0,4520,0.0,Enxurradas,2007/2008,,,,,,87317060,,,11323,Sim
+1996-02-12,0,0,0,0.0,Enxurradas,1996/1997,,,,,,87317060,,,11323,Sim
+1995-12-28,0,0,0,0.0,Enxurradas,1995/1996,,,,,,87317060,,,11323,Sim
+1994-03-20,0,0,0,0.0,Enxurradas,1994/1995,,,,,,87317060,,,11323,Sim
