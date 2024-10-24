@@ -1,0 +1,6 @@
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
+2023-10-25,0,0,0,0.0,Enxurradas,2023/2024,2967.6,2023-11-19,10.88,5.86,4.61,5.31,85400000,,,3139
+2011-02-25,0,0,0,0.0,Enxurradas,2011/2012,2751.2,2011-08-10,3.62,3.91,3.61,3.8,85400000,,,3139
+2008-10-25,0,0,0,1751500.0,Enxurradas,2008/2009,2123.5,2008-10-27,1.55,1.73,1.91,1.83,85400000,,1012427.74566474,3139
+1994-01-18,0,0,0,0.0,Enxurradas,1994/1995,2815.2,1994-07-07,4.58,4.37,3.88,4.17,85400000,,,3139
+1993-12-08,0,0,0,0.0,Enxurradas,1993/1994,2841.0,1993-06-05,5.8,4.58,3.99,4.34,85400000,,,3139

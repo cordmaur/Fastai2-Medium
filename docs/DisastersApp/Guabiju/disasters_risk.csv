@@ -1,0 +1,5 @@
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
+1994-11-09,0,0,0,0.0,Enxurradas,1994/1995,4167.0,1994-07-02,1.48,1.44,1.47,1.45,86510000,,,1478
+1993-07-06,0,0,0,0.0,Enxurradas,1993/1994,6241.7,1993-07-05,2.53,2.55,2.63,2.37,86510000,,,1478
+1994-11-09,0,0,0,0.0,Enxurradas,1994/1995,535.8,1994-04-26,2.19,2.03,2.17,1.94,86480000,,,1478
+1993-07-06,0,0,0,0.0,Enxurradas,1993/1994,455.4,1993-07-04,1.59,1.6,1.69,1.6,86480000,,,1478

@@ -1,0 +1,5 @@
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,TR Log-Pearson 3,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
+1994-06-06,0,0,0,0.0,Enxurradas,1994/1995,18737.5,1994-07-07,2.05,2.4,2.2,2.31,74800000,,,6712
+1992-06-02,0,0,0,0.0,Inundações,1992/1993,48658.6,1992-05-31,43.0,37.1,95.03,49.62,74800000,,,6712
+1994-06-06,0,0,0,0.0,Enxurradas,1994/1995,,,,,,,74610000,,,6712
+1992-06-02,0,0,0,0.0,Inundações,1992/1993,,,,,,,74610000,,,6712

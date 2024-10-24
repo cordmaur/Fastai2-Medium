@@ -1,0 +1,5 @@
+Data Evento,Óbitos,Feridos,Danos Humanos,Danos Materiais,Tipologia,Ano Hidro,Vazao,Data Máxima,TR Empirico,TR lognorm,TR gumbel_r,Código,Risk_Danos Humanos,Risk_Danos Materiais,População
+2017-05-30,0,0,0,0.0,Inundações,2017/2018,22607.4,2017-06-03,8.0,7.99,7.16,75550000,,,1611
+2015-12-29,0,0,200,43243.0,Enxurradas,2015/2016,19662.9,2015-07-18,4.0,4.56,4.49,75550000,43.85964912280702,9483.11403508772,1611
+2010-11-23,0,0,0,0.0,Enxurradas,2010/2011,15314.9,2010-04-29,2.46,2.3,2.4,75550000,,,1611
+2009-11-22,0,0,0,682500.0,Enxurradas,2009/2010,13304.4,2009-09-15,1.88,1.79,1.87,75550000,,381284.9162011173,1611
