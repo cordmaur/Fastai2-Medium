@@ -1,0 +1,92 @@
+/* @media (min-width: 600px) {
+    body {
+        background-color: rgb(198, 225, 255);
+    }
+}
+
+@media (max-width: 599px) {
+    h1 {
+        color: red;
+    }
+} */
+
+body {
+    background-color: white;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    margin: 10px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#container > div {
+    border: 1px solid grey;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    width: 500px;
+}
+
+#risk-label {
+    min-width: 100px;
+    text-align: center;
+}
+
+.risk-comment {
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid grey;
+    margin-top: 8px;
+    /* margin: 0px; */
+    font-size: 10px;
+    padding: 8px;
+    background-color: rgb(138, 224, 228);
+}
+
+.risk-category {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.map {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* .risk-category td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}  */
+
+.risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.risk-table td, .risk-table th, .risk-category td {
+    border: 1px solid rgb(141, 141, 141); /* White borders, like in the image */
+    padding: 8px; /* Add some padding inside cells */
+    text-align: left;  /* Align text to the left */
+}
+
+.risk-table   th, .risk-category th {
+    background-color: #f0f8ff; /* Light blue background (adjust as needed) */
+    color: #1e4090;          /* Dark blue text (adjust as needed) */
+    font-weight: bold; /* Added font weight */
+    padding: 8px;
+  }
