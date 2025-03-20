@@ -31,6 +31,7 @@ h3 {
     display: flex;
     flex-direction:column;
     min-width: 420px;
+    padding-bottom: 10px;
 }
 
 #title-container {
@@ -71,7 +72,7 @@ h3 {
     .card {
         width: 100%; 
     }
-} 
+}
 
 
 .card-header {
@@ -126,7 +127,7 @@ h3 {
 .risk-table td, .risk-table th, .risk-category td, .risk-category th {
     border: 1px solid rgb(141, 141, 141); /* White borders, like in the image */
     padding: 8px; /* Add some padding inside cells */
-    text-align: left;  /* Align text to the left */
+    text-align: center;  /* Align text to the left */
     background-color: white;
 }
 
