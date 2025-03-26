@@ -87,6 +87,11 @@ h3 {
     flex-grow: 1;
 }
 
+.card-chart {
+    margin: 15px;
+    /* height: 200px; */
+}
+
 .card-footer {
     border-top: 1px solid grey;
     margin-top: 8px;
