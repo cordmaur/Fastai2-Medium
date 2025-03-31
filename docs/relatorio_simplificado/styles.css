@@ -89,6 +89,8 @@ h3 {
 
 .card-chart {
     margin: 15px;
+    flex-grow: 0.8;
+    /* place-items: center; */
     /* height: 200px; */
 }
 
