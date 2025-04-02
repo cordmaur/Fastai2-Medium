@@ -4,6 +4,11 @@
     <title>Aceguá / RS</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
 </head>
 <body>
   <div id="report-container">
@@ -12,13 +17,12 @@
     </div>
     <div id="flex-container">
 
-
-          <div id="general" class="card">
-            <div class="card-header">
-              <h3>Informações Gerais e Categoria de Risco </h3>
-            </div>
-            <div class="card-content">
-                <table class="risk-table">
+      <div id="general" class="card">
+        <div class="card-header">
+          <h3>Informações Gerais e Categoria de Risco </h3>
+        </div>
+        <div class="card-content">
+            <table class="risk-table">
   <tr>
     
       <th>Código</th>
@@ -55,15 +59,15 @@
 
 </table>
 
-              <table style="margin-top: 20px;" class="risk-category">
-                <tr>
-                  <th>Classificação de risco</th>
-                  
-                  <td id="risk-label" style="background-color: rgb(255, 255, 255);">Sem dano registrado</td>
-                  
-                </tr>
-            </table>
-            
+          <table style="margin-top: 20px;" class="risk-category">
+            <tr>
+              <th>Classificação de risco</th>
+              
+              <td id="risk-label" style="background-color: rgb(255, 255, 255);">Sem dano registrado</td>
+              
+            </tr>
+          </table>
+          
   <table class="risk-table">
     
     
@@ -84,34 +88,159 @@
     
   
   </table>
-          </div>
+        </div>
 
-            <div class="card-footer">
-              (1) O método quantitativo considera os danos e os tempos de retorno associado
+        <div class="card-footer">
+          (1) O método quantitativo considera os danos e os tempos de retorno associado
                  aos desastres para estimar o risco. O método qualitativo é utilizado quando não há
                  estação hidrológica representativa para o município. Nesses casos, o risco é
                  atribuído por uma matriz de riscos, conforme o número de eventos e respectivos
                  danos reportados.
-            </div>
         </div>
+      </div>
 
-        <div id="context" class="card">
-          <div class="card-header">
-            <h3>Mapa de Contexto</h3>
-          </div>
-          <div class="card-content">
-            <img class="map" src="context_map.jpg" alt="">
-          </div>
+      <div id="context" class="card">
+        <div class="card-header">
+          <h3>Mapa de Contexto</h3>
         </div>
+        <div class="card-content">
+          <img class="map" src="context_map.jpg" alt="">
+        </div>
+      </div>
+
+
+      
 
         
 
-        <div id="disasetrs-summary" class="card">
-          <div class="card-header">
-            <h3>Desastres registrados no S2iD</h3>
-          </div>
-          <div class="card-content">
-              <table class="risk-table">
+      <div id="analysis" class="card">
+        <div class="card-header">
+          <h3>Indicadores de Risco</h3>
+        </div>
+        <div class="card-content">
+          <table class="risk-table">
+  <tr>
+    
+      <th>Indicadores de risco</th>
+    
+      <th>Dano humano esperado (anual)</th>
+    
+  </tr>
+
+  
+  <tr>
+    
+      <td>Inundações</td>
+    
+      <td>Não calculado</td>
+    
+  </tr>
+  
+  <tr>
+    
+      <td>Enxurradas</td>
+    
+      <td>Não calculado</td>
+    
+  </tr>
+  
+  <tr>
+    
+      <td>GloFAS (Total)</td>
+    
+      <td>Não calculado</td>
+    
+  </tr>
+  
+
+</table>
+        </div>
+        <div>
+          <p style="margin: 10px">O indicador de risco é calculado considerando o dano humano total 
+            dividido pelo tempo de retorno do evento, conforme fórmula:</p>
+          $$ Risco = \frac{Dano\:Humano}{Tempo\:de\:Retorno} $$
+        </div>
+        <div class="card-footer">
+          O indicador de risco GLOFAS considera a população urbana exposta às áreas inundáveis até 100 anos de tempo de retorno, conforme modelagem do Global Flood Awareness System (GLOFAS). (https://global-flood.emergency.copernicus.eu/)
+        </div>
+
+      </div>
+
+        
+      <div id="glofas-pop" class="card">
+        <div class="card-header">
+          <h3>População afetada (GloFAS)</h3>
+        </div>
+        <div class="card-content">
+          <table class="risk-table">
+  <tr>
+    
+      <th>Modelo (Tempo de Retorno)</th>
+    
+      <th>População afetada (hab)</th>
+    
+  </tr>
+
+  
+  <tr>
+    
+      <td>GloFAS (TR=10 anos)</td>
+    
+      <td>Não disponível</td>
+    
+  </tr>
+  
+  <tr>
+    
+      <td>GloFAS (TR=20 anos)</td>
+    
+      <td>Não disponível</td>
+    
+  </tr>
+  
+  <tr>
+    
+      <td>GloFAS (TR=50 anos)</td>
+    
+      <td>Não disponível</td>
+    
+  </tr>
+  
+  <tr>
+    
+      <td>GloFAS (TR=75 anos)</td>
+    
+      <td>Não disponível</td>
+    
+  </tr>
+  
+  <tr>
+    
+      <td>GloFAS (TR=100 anos)</td>
+    
+      <td>Não disponível</td>
+    
+  </tr>
+  
+
+</table>
+        </div>
+        <div class="card-footer">
+          Modelagem hidrológica do Global Flood Awareness
+        System (GLOFAS). (https://global-flood.emergency.copernicus.eu/)
+        </div>
+
+      </div>
+
+      
+
+
+      <div id="disasetrs-summary" class="card">
+        <div class="card-header">
+          <h3>Desastres registrados no S2iD</h3>
+        </div>
+        <div class="card-content">
+            <table class="risk-table">
   <tr>
     
       <th>Total de danos humanos</th>
@@ -165,19 +294,24 @@
   
 
 </table>
-            </div>
-            <div class="card-footer">
-            O Sistema Integrado de Informações sobre Desastres - S2ID integra diversos
+          </div>
+          <div class="card-footer">
+          O Sistema Integrado de Informações sobre Desastres - S2ID integra diversos
         produtos da Secretaria Nacional de Proteção e Defesa Civil - SEDEC, com o objetivo de
         qualificar e dar transparência à gestão de riscos e desastres no Brasil.
-          </div>
         </div>
+      </div>
 
         
+      
 
-        
 
-        
+      
+
+      <!--  -->
+
+
+      
 
         <div id="monitoring" class="card">
           <div class="card-header">
@@ -198,28 +332,35 @@
     <tr>
       <th>População sob risco hidrológico (SGB)</th>
       
-      <td></td>
+      <td>Não disponível</td>
       
     </tr>
     
     <tr>
       <th>Ano da setorização (SGB)</th>
       
-      <td></td>
+      <td>Não disponível</td>
+      
+    </tr>
+    
+    <tr>
+      <th>Monitoramento ativo do CEMADEN</th>
+      
+      <td>Não disponível</td>
       
     </tr>
     
     <tr>
       <th>População sob risco hidrológico (CEMADEN)</th>
       
-      <td></td>
+      <td>Não disponível</td>
       
     </tr>
     
     <tr>
       <th>Sistema de alerta (SGB)</th>
       
-      <td></td>
+      <td>Não disponível</td>
       
     </tr>
     
